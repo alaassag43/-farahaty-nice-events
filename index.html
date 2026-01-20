@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <title>فرحتي - Nice Events</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icon-192.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" crossorigin="anonymous">
+    
+    <style>
+        :root {
+            --safe-area-inset-bottom: env(safe-area-inset-bottom);
+            --safe-area-inset-top: env(safe-area-inset-top);
+            --brand-pink: #ec4899;
+            --brand-gold: #d97706;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            background-color: #ffffff;
+            color: #111827;
+            overflow-x: hidden;
+            overscroll-behavior-y: none;
+        }
+        
+        ::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .premium-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f7 100%);
+            border: 1px solid rgba(236, 72, 153, 0.1);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.03);
+        }
+        
+        .gold-glow {
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.2);
+        }
+
+        .btn-premium {
+            background: linear-gradient(90deg, #ec4899 0%, #db2777 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .btn-premium:active { transform: scale(0.95); opacity: 0.9; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade { animation: fadeIn 0.5s ease forwards; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Scan Animation */
+        .scan-line {
+            width: 100%;
+            height: 2px;
+            background: #ec4899;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 15px #ec4899;
+            animation: scan 2s infinite linear;
+        }
+        @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
+
+        @media print {
+          .no-print { display: none !important; }
+          body { background: white !important; }
+          .print-card { 
+            width: 10cm; 
+            height: 15cm; 
+            border: 2px solid gold; 
+            margin: auto;
+            page-break-after: always;
+          }
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
